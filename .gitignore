@@ -47,7 +47,7 @@
 *.vrb
 
 # Output files (comment if you want to keep PDFs)
-*.pdf
+# *.pdf
 *.dvi
 *.ps
 
