@@ -1,0 +1,330 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% Packages
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb}
+\usepackage{parskip}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{colortbl}
+
+% ---------------------------------------------------------
+% Page layout
+% ---------------------------------------------------------
+\geometry{
+	top=2.5cm,
+	bottom=2.5cm,
+	left=2.3cm,
+	right=2.3cm
+}
+
+\setlength{\parskip}{0.7em}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{62pt}  
+\addtolength{\topmargin}{-30pt}
+
+% Increase headheight to fit logos + bar
+\setlength{\headheight}{60pt}
+
+% ---------------------------------------------------------
+% Colors
+% ---------------------------------------------------------
+\definecolor{headerblue}{RGB}{0,90,170}
+\definecolor{headergray}{gray}{0.9}
+
+% ---------------------------------------------------------
+% fancyhdr rules
+% ---------------------------------------------------------
+% Remove default header rule (this was the line under the blue bar)
+\renewcommand{\headrulewidth}{0pt}
+% We'll draw the footer rule manually
+\renewcommand{\footrulewidth}{0pt}
+
+% ---------------------------------------------------------
+% User-editable contest info
+% ---------------------------------------------------------
+\newcommand{\ContestSeriesName}{Programming Contest League}
+\newcommand{\ContestTitle}{Sample University Programming League 2025}
+
+% ---------------------------------------------------------
+% Full-width blue bar (touching page edges)
+% ---------------------------------------------------------
+\newcommand{\FullWidthColorBar}{%
+	\noindent
+	\hspace*{-\oddsidemargin}%
+	\hspace*{-1in}%
+	\colorbox{headerblue}{%
+		\parbox[c][1.3em][c]{\paperwidth}{%
+			\centering\bfseries\color{white}\small \ContestTitle
+		}%
+	}%
+}
+
+% ---------------------------------------------------------
+% Header layout
+% ---------------------------------------------------------
+\newcommand{\ContestHeader}{%
+	\begin{minipage}{\textwidth}
+		\centering %ICPC|text|uni|Sci|Cul
+		\begin{tabular}{@{} m{0.10\textwidth} m{0.45\textwidth} m{0.15\textwidth} m{0.15\textwidth} m{0.15\textwidth} @{}}
+			\centering\includegraphics[height=1.6cm]{logo/icpc-logo} &
+			\centering\small\bfseries \ContestSeriesName &
+			\centering\includegraphics[height=1.6cm]{logo/university-logo} &
+			\centering\includegraphics[height=1.6cm]{logo/scientific-logo} &
+			\centering\includegraphics[height=1.6cm]{logo/cultural-logo}
+		\end{tabular}
+		
+	\end{minipage}
+	
+	\vspace{0.3em}
+	
+	\FullWidthColorBar
+}
+
+% ---------------------------------------------------------
+% Problem footer variables
+% ---------------------------------------------------------
+\newcounter{probstartpage}
+\newcommand{\currentproblemlabel}{}
+\newcommand{\currentproblemname}{}
+\newcommand{\currentproblemtotalpages}{}
+
+% ---------------------------------------------------------
+% Fancy page styles
+% ---------------------------------------------------------
+\pagestyle{fancy}
+
+% Main style for problem pages
+\fancypagestyle{problemstyle}{%
+	\fancyhf{}
+	\fancyhead[C]{\ContestHeader}
+	\fancyfoot[C]{%
+		\rule{\textwidth}{0.4pt}\\[-0.3em]
+		\small
+		Problem \currentproblemlabel\ -- Page
+		\the\numexpr\value{page}-\value{probstartpage}+1\relax\ of \currentproblemtotalpages%
+	}%
+}
+
+% First page (cover): header only, empty footer
+\fancypagestyle{firstpage}{%
+	\fancyhf{}
+	\fancyhead[C]{\ContestHeader}
+}
+
+\pagestyle{problemstyle}
+
+% ---------------------------------------------------------
+% Problem environment
+%   Usage: \begin{problem}{A}{Micromasters}{1} ... \end{problem}
+%   3rd arg = total number of pages of this problem
+% ---------------------------------------------------------
+\newenvironment{problem}[3]{%
+	\clearpage
+	\def\currentproblemlabel{#1}%
+	\def\currentproblemname{#2}%
+	\def\currentproblemtotalpages{#3}%
+	\setcounter{probstartpage}{\value{page}}%
+	\section*{Problem \currentproblemlabel\ : \currentproblemname}
+}{%
+	% nothing
+}
+
+% ---------------------------------------------------------
+% Example table command
+% ---------------------------------------------------------
+\newcommand{\sampleio}[2]{%
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}%
+		\begin{tabular}{|p{0.47\textwidth}|p{0.47\textwidth}|}
+			\hline
+			\rowcolor{headergray}
+			\centering\textbf{Standard Input} &
+			\centering\textbf{Standard Output} \tabularnewline
+			\hline
+			{\ttfamily\raggedright #1} &
+			{\ttfamily\raggedright #2} \tabularnewline
+			\hline
+		\end{tabular}
+	\end{center}
+}
+
+% =========================================================
+% Document starts
+% =========================================================
+\begin{document}
+	
+	% ---------------------------------------------------------
+	% First page (cover)
+	% ---------------------------------------------------------
+	\thispagestyle{firstpage}
+	
+	\vspace*{3.5cm}
+	\begin{center}
+		{\LARGE\bfseries \ContestTitle \par}
+		
+		\vspace{1.2cm}
+		\includegraphics[height=3cm]{logo/icpc-logo}
+		
+		\vspace{1.5cm}
+		{\large Date: May 2025 \par}
+		
+		\vspace{1.5cm}
+		{\bfseries Scientific Committee}\\[0.4em]
+		Alice Example \\
+		Bob Example \\
+		Charlie Example
+		
+		\vspace{1cm}
+		{\bfseries Technical Committee}\\[0.4em]
+		Dave Example \\
+		Eve Example
+		
+		\vspace{1cm}
+		{\bfseries Executive Committee}\\[0.4em]
+		Foo Example \\
+		Bar Example
+	\end{center}
+	
+	% ---------------------------------------------------------
+	% From now on, use problemstyle
+	% ---------------------------------------------------------
+	\pagestyle{problemstyle}
+	
+	% ---------------------------------------------------------
+	% Sample Problem A
+	% ---------------------------------------------------------
+	\begin{problem}{A}{Micromasters}{1}
+		Mina is a talented student who refers students to an online program
+		called Micromasters. For each referred student, she gets a 10\% discount
+		on one course registration. Given the number of referred students, you
+		are asked to compute how many courses she can take for free.
+		
+		\textbf{Input}
+		
+		The input consists of a single line containing an integer $n$ ($0 \le n \le 1000$),
+		the number of students referred by Mina.
+		
+		\textbf{Output}
+		
+		Print a single line containing the number of courses Mina can enroll in
+		for free.
+		
+		\textbf{Example}
+		
+		\sampleio{5}{0}
+
+		\sampleio{18}{1}
+		
+	\end{problem}
+	
+	% ---------------------------------------------------------
+	% Sample Problem B (2 pages)
+	% ---------------------------------------------------------
+	\begin{problem}{B}{Sample Problem}{2}
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		This is another sample problem statement. Write your full English
+		description here. There is no box around the description, and there is
+		no separate ``Constraints'' section. Any bounds or conditions should be
+		explained in the input description if needed.
+		
+		
+		
+		
+		
+		\textbf{Input}
+		
+		Describe the input format here, including all necessary conditions and
+		bounds.
+		
+		\textbf{Output}
+		
+		Describe the required output here.
+		
+		\textbf{Example}
+		
+		\sampleio{%
+			4 6\\
+			0 U\\
+			0 D\\
+			6 U\\
+			3 U%
+		}{%
+			15%
+		}
+		
+		More explanation, notes, or additional examples can go here to
+		demonstrate how a multi-page problem would look.
+	\end{problem}
+	
+\end{document}
