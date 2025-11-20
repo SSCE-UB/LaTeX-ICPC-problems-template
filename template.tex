@@ -108,7 +108,7 @@
 		\rule{\textwidth}{0.4pt}\\[-0.3em]
 		\small
 		Problem \currentproblemlabel\ -- Page
-		\the\numexpr\value{page}-\value{probstartpage}+1\relax\ of \currentproblemtotalpages%
+		\number\numexpr\value{page}-\value{probstartpage}+1\relax\ of \currentproblemtotalpages%
 	}%
 }
 
@@ -127,9 +127,9 @@
 % ---------------------------------------------------------
 \newenvironment{problem}[3]{%
 	\clearpage
-	\def\currentproblemlabel{#1}%
-	\def\currentproblemname{#2}%
-	\def\currentproblemtotalpages{#3}%
+	\gdef\currentproblemlabel{#1}%
+	\gdef\currentproblemname{#2}%
+	\gdef\currentproblemtotalpages{#3}%
 	\setcounter{probstartpage}{\value{page}}%
 	\section*{Problem \currentproblemlabel\ : \currentproblemname}
 }{%
@@ -219,7 +219,7 @@
 		\textbf{Example}
 		
 		\sampleio{5}{0}
-
+		
 		\sampleio{18}{1}
 		
 	\end{problem}
@@ -297,9 +297,6 @@
 		description here. There is no box around the description, and there is
 		no separate ``Constraints'' section. Any bounds or conditions should be
 		explained in the input description if needed.
-		
-		
-		
 		
 		
 		\textbf{Input}
