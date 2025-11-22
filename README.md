@@ -1,4 +1,4 @@
-# ICPC Programming Contest LaTeX Template
+# ICPC Programming Contest's Problems LaTeX Template
 
 A professional LaTeX template for programming contest problem sets, designed for ICPC-style competitions with multi-problem booklets.
 
@@ -13,18 +13,18 @@ A professional LaTeX template for programming contest problem sets, designed for
 - **Responsive Design**: Adjusts to different problem lengths and page counts  
 
 ## File Structure
-```
+```plaintext
 project/
-├── template.tex # Main template file
-├── first-page.tex # Cover page (optional)
+├── template.tex            # Main template file
+├── first-page.tex          # Cover page (optional)
 ├── problems/
-│ ├── A.tex # Problem A content
-│ └── B.tex # Problem B content
-└── logo/ # Directory for logo files
-├── icpc-logo.* # ICPC foundation logo
-├── university-logo.* # University logo
-├── scientific-logo.* # Scientific sponsor logo
-└── cultural-logo.* # Cultural sponsor logo
+│   ├── A.tex               # Problem A content
+│   └── B.tex               # Problem B content
+└── logo/                   # Directory for logo files
+    ├── icpc-logo.*         # ICPC foundation logo
+    ├── university-logo.*   # University logo
+    ├── scientific-logo.*   # Scientific sponsor logo
+    └── cultural-logo.*     # Cultural sponsor logo
 ```
 
 ## Required Packages
@@ -59,6 +59,9 @@ Use the problem environment:
 % Problem content here
 \end{problem}
 ```
+You can separate the problem text file from the template.tex and input it to the template.tex
+
+> ⚠️ **Important:** You must manually specify the total number of pages as the third parameter in the problem instruction. While page numbering is dynamic, the total page count needs to be initialized by the user.
 
 ### Sample Input/Output
 Use the provided command:
