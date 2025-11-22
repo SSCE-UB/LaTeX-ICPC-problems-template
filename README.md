@@ -16,7 +16,7 @@ A professional LaTeX template for programming contest problem sets, designed for
 ```plaintext
 project/
 ├── template.tex            # Main template file
-├── first-page.tex          # Cover page (optional)
+├── cover-page.tex          # Cover page (optional)
 ├── problems/
 │   ├── A.tex               # Problem A content
 │   └── B.tex               # Problem B content
