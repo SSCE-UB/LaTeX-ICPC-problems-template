@@ -1,4 +1,4 @@
-# ICPC Programming Contest LaTeX Template
+# ICPC Programming Contest's Problems LaTeX Template
 
 A professional LaTeX template for programming contest problem sets, designed for ICPC-style competitions with multi-problem booklets.
 
