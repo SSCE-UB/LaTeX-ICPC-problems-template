@@ -13,6 +13,7 @@ A professional LaTeX template for programming contest problem sets, designed for
 - **Responsive Design**: Adjusts to different problem lengths and page counts  
 
 ## File Structure
+```
 project/
 ├── template.tex # Main template file
 ├── first-page.tex # Cover page (optional)
@@ -24,7 +25,7 @@ project/
 ├── university-logo.* # University logo
 ├── scientific-logo.* # Scientific sponsor logo
 └── cultural-logo.* # Cultural sponsor logo
-
+```
 
 ## Required Packages
 
