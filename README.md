@@ -21,10 +21,10 @@ project/
 │ ├── A.tex # Problem A content
 │ └── B.tex # Problem B content
 └── logo/ # Directory for logo files
-├── icpc-logo.* # ICPC foundation logo
-├── university-logo.* # University logo
-├── scientific-logo.* # Scientific sponsor logo
-└── cultural-logo.* # Cultural sponsor logo
+  ├── icpc-logo.* # ICPC foundation logo
+  ├── university-logo.* # University logo
+  ├── scientific-logo.* # Scientific sponsor logo
+  └── cultural-logo.* # Cultural sponsor logo
 ```
 
 ## Required Packages
