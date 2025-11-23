@@ -103,7 +103,6 @@ Customizable via `\definecolor` commands.
 - The template automatically handles problem page numbering  
 - Remove first page by commenting `\input{first-page.tex}` if not needed  
 
-## License
 
 ## License
 
