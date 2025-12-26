@@ -1,53 +1,52 @@
-\begin{problem}{B}{Sample Problem}{2}
-	This is another sample problem statement. Write your full English
-	description here. There is no box around the description, and there is
-	no separate ``Constraints'' section. Any bounds or conditions should be
-	explained in the input description if needed.
+\begin{problem}{B}{Rolling-Dice Puzzle}{2}
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	\begin{wrapfigure}{r}{0.28\textwidth}
+		\vspace{-0.2em}
+		\centering
+		\includegraphics[width=0.30\textwidth]{images/B.jpg}
+	\end{wrapfigure}
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Sarina and her brother, Soroush, are playing the rolling-dice game. The game is played on an $n \times m$ board. Initially, Soroush places a standard dice in one of the cells. It is place in a way that the number 6 is on the upper face, the number 4 is on the north face, and the number 2 is on the west face. In a standard dice, 6 is on the opposite side of 1, 2 is on the opposite side of 5, and 3 is on the opposite side of 4. Additionally, he selects some of the cells and writes arbitrary integers numbers from 1 to 6 in them. 
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	\vspace{0.5cm}
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	After that, Sarina have to move the dice on the board by rolling it multiple times. The act of rolling is defined as follows: Suppose two adjacent cells $A$ and $B$ share an edge $e$ and the dice is on the cell $A$; The dice can be rolled around its edge incident to $e$ and moved from $A$ to $B$. For example, consider the starting position of the dice. If the dice is rolled around the east, west, north, and south edges, the number appearing on the top face after rolling will be 2, 5, 3, and 4, respectively.
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	\vspace{0.5cm}
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Whenever Sarina moves the dice to a a cell with a number in it in such a way that the number on the upper face of the dice matches the number in that cell, she gets a point. Note that Sarina can get a point from each cell at most one. The game is not that simple! There are obstacles in some of the cells and it is not possible to move the dice to the cells with an obstacle in it. Your task is to find out the maximum points that Sarina can get.
 	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
+	\vspace{1.5cm}
 	
 	\textbf{Input}
 	
-	Describe the input format here, including all necessary conditions and
-	bounds.
+	The first line of input contains two integers $n$ and $m$ ($1 \le n, m \le 100$), indicating the number of rows and columns of the board, respectively. Each of the next $n$ lines contain $m$ characters, describing the board. Empty cells are represented by ``.'' and obstacles are represented by ``x''. The starting position of the dice is represented by ``s'' and the selected cells are represented by the integers written in them (from 1 to 6). It is guaranteed that there is only one ``s'' in the input.
+	
+	\vspace{1.5cm}
 	
 	\textbf{Output}
 	
-	Describe the required output here.
+	Output a line containing the maximum points Sarina can get.
+	
+	\clearpage
 	
 	\textbf{Example}
 	
 	\sampleio{%
-		4 6\\
-		0 U\\
-		0 D\\
-		6 U\\
-		3 U%
+		3\ 4\\
+		.23s\\
+		4.2x\\
+		xx.1%
 	}{%
-		15%
+		5%
 	}
 	
-	More explanation, notes, or additional examples can go here to
-	demonstrate how a multi-page problem would look.
+	\sampleio{%
+		2\ 2\\
+		4s\\
+		22%
+	}{%
+		1%
+	}
+	
 \end{problem}
